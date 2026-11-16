@@ -11,14 +11,14 @@ def verificar_situacao(media): # outra função só que para média - aqui ele a
     else:
         return "Reprovado" # reprovado caso seja menor que 5
     
-def exibir_relatorio(nome, media, situacao):
+def exibir_relatorio(nome, media, situacao): # aqui exibe resultados retornados das funções anteriores
     print("=== RELATÓRIO ===")
     print(f"Aluno: {nome}")
     print(f"Média: {media:.2f}")
     print(f"Situação: {situacao}")
     print("=================")
 
-while True:
+while True: # programa principal pede o nome do aluno as notas
     nome = input("Digite aqui o nome do Aluno(Ou para encerrar 'Sair'):").strip()
 
     if nome.lower() == "sair":
@@ -35,7 +35,7 @@ while True:
             except ValueError:
                 print("Erro! digite apenas números para as notas!")
 
-    # 🎯 AQUI VOCÊ CHAMA AS FUNÇÕES:
+    # AQUI VOCÊ CHAMA AS FUNÇÕES:
     media = calcular_media(notas)              # recebe a média
     situacao = verificar_situacao(media)       # recebe a situação
     exibir_relatorio(nome, media, situacao)    # imprime o relatório
